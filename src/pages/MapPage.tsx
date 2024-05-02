@@ -22,9 +22,6 @@ export const MapPage = () => {
     const data = await fetchWeather(latitude, longitude);
     setWeatherData(data);
   };
-
-  console.log("selectedMarkerInfo", selectedMarkerInfo);
-  console.log("weatherData", weatherData);
   const pointMarkers = useMemo(() => {
     const geoData = getGeoData();
     return geoData

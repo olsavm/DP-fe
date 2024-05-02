@@ -27,6 +27,13 @@ export default function App() {
       longitude: 17.1115585,
       radius: 1500, // meters
     },
+    {
+      id: 'Tamraght',
+      latitude: 30.5081741,
+      longitude: -9.6763103,
+      radius: 1500,
+
+    }
     // Add more regions as needed
   ];
 
@@ -50,11 +57,9 @@ export default function App() {
   }
 
   async function fetchData() {
-    // Simulate fetching data
-    // Replace this with your actual fetch call
     return {
       shouldShowNotification: true,
-      message: "Welcome to the target area!",
+      message: "Watch out! There is avalanche danger in your area!",
     };
   }
 
@@ -73,7 +78,7 @@ export default function App() {
     const subscription = Location.watchPositionAsync(
         {
           accuracy: Location.Accuracy.High,
-          distanceInterval: 10, // Receive updates only after moving 10 meters
+          distanceInterval: 0, // Receive updates only after moving 10 meters
         },
         async (location) => {
           if (withinAnyRegion(location, targetRegions)) {

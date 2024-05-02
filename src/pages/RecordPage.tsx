@@ -37,11 +37,11 @@ export const RecordPage = ({ route }) => {
     const heartRates = dataArray.map((item) => item.value);
 
     // Calculate maximum heart rate
-    const maxHeartRate = Math.max(...heartRates);
+    const maxHeartRate = Math.trunc(Math.max(...heartRates));
 
     // Calculate average heart rate
     const averageHeartRate =
-      heartRates.reduce((acc, val) => acc + val, 0) / heartRates.length;
+      Math.trunc(heartRates.reduce((acc, val) => acc + val, 0) / heartRates.length);
 
     // Return the results in a formatted object
     return {
