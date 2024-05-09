@@ -112,23 +112,31 @@ export const BottomDrawer = ({ weatherData, selectedMarkerInfo }) => {
         <View style={{ alignItems: "center" }}>
           <Text
             style={{
-              color: windWarning || snowfallWarning ? COLOR_RED : COLOR_GREEN,
+              color:  COLOR_RED,
               marginBottom: 12,
               fontSize: 16,
             }}
           >
-            {windWarning || snowfallWarning ? "Alerts" : "No Alerts"}
+            {windWarning || snowfallWarning ? "Alerts" : "Alerts"}
           </Text>
           <View style={{ display: "flex", flexDirection: "row", gap: 12 }}>
-            {windWarning}
-            {snowfallWarning}
-            {!windWarning && !snowfallWarning && (
-              <Icon
-                color={COLOR_GREEN}
+            <Icon
                 size={DRAWER_ICON_SIZE}
-                source="weather-sunny"
-              />
-            )}
+                source="weather-snowy-heavy"
+                color={COLOR_RED}
+            />
+            <Icon
+                size={DRAWER_ICON_SIZE}
+                source="weather-windy"
+                color={COLOR_RED}
+            />
+            {/*{!windWarning && !snowfallWarning && (*/}
+            {/*  <Icon*/}
+            {/*    color={COLOR_GREEN}*/}
+            {/*    size={DRAWER_ICON_SIZE}*/}
+            {/*    source="weather-sunny"*/}
+            {/*  />*/}
+            {/*)}*/}
           </View>
         </View>
       </View>
